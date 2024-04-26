@@ -10,8 +10,6 @@ router.get("/new", (req, res) => {
 // Handle form submission to create a new article
 router.post("/", (req, res) => {
   // Here you can access the form data from req.body
-  const title = req.body.title;
-  const content = req.body.content;
 
   // Example: Save the article to the database or perform other actions
   // For now, let's just send a response
