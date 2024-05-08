@@ -3,6 +3,7 @@ const Article = require("./models/article");
 const mongoose = require("mongoose");
 const articleRouter = require("./routes/articles");
 const dotenv = require("dotenv/config");
+const methodOverride = require("method-override");
 
 const app = express();
 
@@ -28,6 +29,8 @@ app.set("view engine", "ejs");
 
 // Use article router
 app.use(express.urlencoded({ extended: false }));
+
+app.use(methodOverride("_method"));
 
 // Dummy data for testing
 

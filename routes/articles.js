@@ -30,4 +30,14 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    await Article.findByIdAndDelete(req.params.id);
+    res.redirect("/"); // Send a 204 No Content response if deletion is successful
+  } catch (err) {
+    console.error("Error deleting article:", err);
+    res.status(500).send("Error deleting article");
+  }
+});
+
 module.exports = router;
