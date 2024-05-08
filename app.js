@@ -33,7 +33,9 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get("/", async (req, res) => {
   try {
-    const articles = await Article.find(); // Set a timeout of 60 seconds (60000 milliseconds)
+    const articles = await Article.find().sort({
+      createdAt: "desc",
+    }); // Set a timeout of 60 seconds (60000 milliseconds)
     res.render("articles/index", { articles: articles });
   } catch (err) {
     console.error("Error fetching articles:", err);
