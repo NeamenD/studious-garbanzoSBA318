@@ -11,6 +11,7 @@ This is a simple blog website built using Express.js, MongoDB, and EJS templatin
 - Create new articles
 - Edit existing articles
 - Delete articles
+- show articles
 
 ## Setup
 
